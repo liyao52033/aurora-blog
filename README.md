@@ -32,6 +32,7 @@
 
 ## 部署
 
+- app.yml重命名为application.yml
 - 详见项目部署文档
 
 ## 交流群
