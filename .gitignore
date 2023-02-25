@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 dist
-aurora-springboot/src/main/resources/application.yml
 
 .env.local
 .env.*.local
@@ -21,3 +20,4 @@ yarn-error.log*
 
 target
 aurora-springboot/src/test
+aurora-springboot/src/main/resources/application.yml
