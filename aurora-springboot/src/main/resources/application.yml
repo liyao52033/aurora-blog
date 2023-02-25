@@ -96,22 +96,6 @@ upload:
     # bucketName: 桶的名称
 
 
-# upload:
-  # mode: cos
-  # cos:
-    # baseUrl: https://aurora-1258839075.cos.ap-shanghai.myqcloud.com
-    # accessKey: AKIDCSjqkRzKSL2TfaHtHQQCqJj5PZaTCnFU
-    # secretKey: 8CEGctMtQF82TvMmME0gRMIEBCDCF4Jb
-    # regionName: ap-shanghai
-    # bucketName: aurora-1258839075
-    # folderPrefix: /files
-  # minio:
-    # url: http://minio的ip:9000/
-    # endpoint: http://minio的ip:9000
-    # accesskey: 用户名
-    # secretKey: 密码
-    # bucketName: 桶的名称
-
 website:
   url: http://43.142.13.221/
 
