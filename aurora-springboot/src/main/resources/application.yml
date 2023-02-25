@@ -1,0 +1,121 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://43.142.13.221:3306/aurora?serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: Hik1234
+    hikari:
+      minimum-idle: 10
+      idle-timeout: 180000
+      maximum-pool-size: 100
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 60000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+  redis:
+    host: 43.142.13.221
+    port: 6379
+    password: Hik1234
+    database: 1
+    lettuce:
+      pool:
+        max-idle: 100
+        max-active: 100
+        max-wait: 10000
+        min-idle: 10
+
+  rabbitmq:
+    host: 43.142.13.221
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 3000
+
+  # elasticsearch:
+    # rest:
+      # uris: 43.142.13.221:9200
+
+  mail:
+    host: smtp.163.com
+    username: liyao52033@163.com
+    password: NKHSJHLKBDSAOAJV
+    default-encoding: UTF-8
+    protocol: smtp
+    port: 465
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 465
+          ssl:
+            enable: true
+          starttls:
+            enable: true
+            required: true
+
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+search:
+  mode: mysql
+
+upload:
+  mode: oss
+  oss:
+    url: http://aurora-admin.oss-cn-shanghai.aliyuncs.com/
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    accessKeyId: LTAI5t7bm7TDEj9NN7aaZsiv
+    accessKeySecret: yiWuhwqh3DSNQjMqRmhUtmBxLGBka1
+    bucketName: aurora-admin
+  # minio:
+    # url: http://minio的ip:9000/
+    # endpoint: http://minio的ip:9000
+    # accesskey: 用户名
+    # secretKey: 密码
+    # bucketName: 桶的名称
+
+
+# upload:
+  # mode: cos
+  # cos:
+    # baseUrl: https://aurora-1258839075.cos.ap-shanghai.myqcloud.com
+    # accessKey: AKIDCSjqkRzKSL2TfaHtHQQCqJj5PZaTCnFU
+    # secretKey: 8CEGctMtQF82TvMmME0gRMIEBCDCF4Jb
+    # regionName: ap-shanghai
+    # bucketName: aurora-1258839075
+    # folderPrefix: /files
+  # minio:
+    # url: http://minio的ip:9000/
+    # endpoint: http://minio的ip:9000
+    # accesskey: 用户名
+    # secretKey: 密码
+    # bucketName: 桶的名称
+
+website:
+  url: http://43.142.13.221/
+
+# qq:
+  # app-id: QQ APPID
+  # check-token-url: https://graph.qq.com/oauth2.0/me?access_token={access_token}
+  # user-info-url: https://graph.qq.com/user/get_user_info?openid={openid}&access_token={access_token}&oauth_consumer_key={oauth_consumer_key}
