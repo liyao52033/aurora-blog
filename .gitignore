@@ -19,5 +19,4 @@ yarn-error.log*
 *.sw?
 
 target
-aurora-springboot/src/test
-aurora-springboot/src/main/resources/application.yml
+/aurora-springboot/src/main/resources/application.yml
