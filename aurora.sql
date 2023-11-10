@@ -1,3 +1,9 @@
+-- 创建库
+create database if not exists aurora;
+
+-- 切换库
+use aurora;
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
